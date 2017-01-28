@@ -1,5 +1,5 @@
 {
-	"name": "Morphdom feed",
+	"name": "Morphdom-feed",
 	"version": "1.0.0",
 	"description": "Test morphdom for content feeds with infinite scroll",
 	"main": "index.js",

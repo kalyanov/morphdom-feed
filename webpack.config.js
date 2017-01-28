@@ -1,13 +1,14 @@
-var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 var PUBLIC_PATH = path.resolve(__dirname, 'public');
 var SOURCE_PATH = path.resolve(__dirname, 'src');
 
 module.exports = {
-	entry: {
-		app: ['./src']
-	},
+	entry: [
+		'./src'
+	],
 	output: {
 		path: PUBLIC_PATH,
 		publicPath: '/',
@@ -24,10 +25,14 @@ module.exports = {
 				loader: 'babel-loader',
 				include: SOURCE_PATH
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	loader: ExtractTextPlugin.extract('css')
-			// },
+			{
+				test: /\.less$/,
+				loader: ExtractTextPlugin.extract(
+					'style-loader',
+					'css-loader',
+					'less-loader'
+				)
+			},
 			{
 				test: /\.json$/,
 				loader: 'json'
@@ -35,10 +40,9 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new ExtractTextPlugin('styles.css'),
 		new CopyWebpackPlugin([{
 			from: 'src/index.html'
-		}], {
-		//	copyUnmodified: true
-		})
+		}], {})
 	]
 };

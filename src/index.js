@@ -1,5 +1,7 @@
 'use strict';
 
+import styles from './styles.less';
+
 import items from './items.json';
 
 const contentContainer = document.documentElement.querySelector('.js-content');

@@ -1,8 +1,8 @@
 'use strict';
 
-var contentContainer = document.documentElement.querySelector('.js-content');
+const contentContainer = document.documentElement.querySelector('.js-content');
 
-var content = document.createElement('p');
+const content = document.createElement('p');
 content.innerText = 'Index.js content';
 
 contentContainer.appendChild(content);

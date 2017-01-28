@@ -11,6 +11,10 @@
 		"build-prod": "webpack -p",
 		"start": "npm run build-prod && node ./server.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trth/morphdom-feed.git"
+	},
 	"author": "Oleg Kalyanov <oleg1556@gmail.com>",
 	"license": "MIT",
 	"dependencies": {

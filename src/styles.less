@@ -1,3 +1,5 @@
+@animation: linear .3s;
+
 * {
 	box-sizing: border-box;
 }
@@ -18,19 +20,24 @@
  * Block "feed"
  */
 .feed__button {
-	background: fade(lightgray, 50%);
+	background: lightgray;
 	text-align: center;
 	line-height: 50px;
 	font-size: 24px;
 	cursor: pointer;
-}
+	transition: background-color @animation;
 
-.feed__button--prev {
-	margin-bottom: 50px;
-}
+	&--prev {
+		margin-bottom: 50px;
+	}
 
-.feed__button--next {
-	margin-top: 50px;
+	&--next {
+		margin-top: 50px;
+	}
+
+	&:hover {
+		background: darken(lightgray, 10%);
+	}
 }
 
 /**
@@ -47,10 +54,6 @@
 	& + & {
 		margin-top: 50px;
 	}
-}
-
-.list__item + .list__item {
-	margin-top: 50px;
 }
 
 /**

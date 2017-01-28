@@ -28,11 +28,8 @@ module.exports = {
 			},
 			{
 				test: /\.less$/,
-				loader: ExtractTextPlugin.extract(
-					'style-loader',
-					'css-loader',
-					'less-loader'
-				)
+				loader: ExtractTextPlugin
+					.extract('style', 'css!autoprefixer!less')
 			},
 			{
 				test: /\.json$/,

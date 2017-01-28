@@ -4,14 +4,19 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Webpack dev server test</title>
+	<title>Morphdom Test</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body class="body">
-	<h1>Webpack dev server test</h1>
 
-	<div class="js-content"></div>
+<h1 class="title">Morphdom and infinite content feed</h1>
 
-	<script type="text/javascript" src="bundle.js"></script>
+<div class="feed">
+	<div class="feed__button feed__button--prev js-button-prev">Load Prev</div>
+	<div class="js-list-wrap"></div>
+	<div class="feed__button feed__button--next js-button-next">Load Next</div>
+</div>
+
+<script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>

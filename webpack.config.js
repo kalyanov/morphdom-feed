@@ -7,6 +7,7 @@ var SOURCE_PATH = path.resolve(__dirname, 'src');
 
 module.exports = {
 	entry: [
+		'./src/styles.less',
 		'./src'
 	],
 	output: {

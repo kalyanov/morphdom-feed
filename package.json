@@ -1,18 +1,20 @@
 {
-	"name": "morphdom-test",
+	"name": "Morphdom feed",
 	"version": "1.0.0",
-	"description": "Test morphdom for content feeds with infinit scroll",
+	"description": "Test morphdom for content feeds with infinite scroll",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "make build && node ./server.js",
-		"build": "webpack",
+		"test": "echo \"Error: no test specified\"",
 		"clean": "rm -rf ./public",
-		"rebuild": "npm run clean && npm run build"
+		"debug": "webpack-dev-server --inline --host localhost --port 3000 --content-base public/",
+		"build": "webpack",
+		"build-prod": "webpack -p",
+		"start": "npm run build-prod && node ./server.js"
 	},
-	"author": "",
-	"license": "ISC",
+	"author": "Oleg Kalyanov <oleg1556@gmail.com>",
+	"license": "MIT",
 	"dependencies": {
+		"express": "^4.14.0",
 		"morphdom": "^2.3.1"
 	},
 	"devDependencies": {

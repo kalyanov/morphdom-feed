@@ -1,9 +1,9 @@
 'use strict';
 
 // Import sources
-import items from './items.json';
+import items from './data/items.json';
 
-// Load libriaries
+// Load libraries
 const morphdom = require('morphdom');
 
 // Set constants
@@ -18,12 +18,16 @@ const getNewList = offset => {
 
 	for (let i = 1; i <= 2 * STEP; i++) {
 		const articleId = offset + i;
-		const article = items[Math.abs(articleId % 10)];
+		const articleIndex = Math.abs(articleId % 10);
+		const article = items[articleIndex];
 
 		itemsString +=
 			`<li class="list__item">
 				<div class="article">
 					<h2 class="article__title">${articleId}. Article</h2>
+					<div class="article__image" 
+						 style="background-image: url('assets/images/${articleIndex}.jpg')" alt="image-${articleId}">
+					</div>
 					<div class="article__text">${article.text}</div>
 				</div>
 			</li>`;
